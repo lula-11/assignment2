@@ -8,8 +8,9 @@ import com.example.todoapp.data.AuthResponse
 import com.example.todoapp.data.RetrofitInstance
 import kotlinx.coroutines.launch
 
-class LoginViewModel : ViewModel() {
-    private val api: ApiService = RetrofitInstance.api
+
+class LoginViewModel(private val api: ApiService = RetrofitInstance.api) : ViewModel() {
+
     private val apiKey = "244fb58f-2edf-44a9-ab60-38efe35f4952"
 
     fun login(email: String, password: String, onSuccess: (AuthResponse) -> Unit, onError: (String) -> Unit) {

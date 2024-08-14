@@ -12,8 +12,7 @@ import com.example.todoapp.data.TodoRequest
 import com.example.todoapp.data.RetrofitInstance
 import kotlinx.coroutines.launch
 
-class TodoListViewModel : ViewModel() {
-    private val api: ApiService = RetrofitInstance.api
+class TodoListViewModel(private val api: ApiService = RetrofitInstance.api) : ViewModel() {
     private val apiKey = "244fb58f-2edf-44a9-ab60-38efe35f4952"
 
     var todos = mutableStateListOf<TodoItem>()
